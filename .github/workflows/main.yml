@@ -14,7 +14,7 @@ jobs:
       id: pom-details
       uses: ./ # Local action
 
-    - name: Test values
+    - name: Test values 1
       run: |
         ${{ steps.pom-details.outputs.current_version == '1.11.3.Final' }} && \
         ${{ steps.pom-details.outputs.project_group == 'org.acme' }} && \
@@ -27,9 +27,16 @@ jobs:
       with:
         filename: pom.xml
 
-    - name: Test values
+    - name: Test values 2
       run: |
         ${{ steps.pom-details.outputs.current_version == '1.11.3.Final' }} && \
         ${{ steps.pom-details.outputs.project_group == 'org.acme' }} && \
         ${{ steps.pom-details.outputs.project_name == 'code-with-quarkus' }} && \
         ${{ steps.pom-details.outputs.quarkus_extensions == 'io.quarkus:quarkus-arc,io.quarkus:quarkus-junit5' }}
+
+    - name: Test values for failure
+      run: |
+        ! [[ ${{ steps.pom-details.outputs.current_version == '1.11.3.Final' }} && \
+        ${{ steps.pom-details.outputs.project_group == 'org.acme' }} && \
+        ${{ steps.pom-details.outputs.project_name == 'code-with-quarkus' }} && \
+        ${{ steps.pom-details.outputs.quarkus_extensions == 'io.quarkus:quarkus-arc,io.quarkus:quarkus-junit5' }} ]]
