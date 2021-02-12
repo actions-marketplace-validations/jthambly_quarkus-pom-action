@@ -31,6 +31,6 @@ The Quarkus dependencies contained in the POM file.
 ```
 uses: jthambly/quarkus-pom-action@v1
 with:
-  filename: 'pom.xml'
+  filename: pom.xml
  
 ```

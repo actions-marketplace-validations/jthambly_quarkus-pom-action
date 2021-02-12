@@ -10,9 +10,9 @@ jobs:
       uses: actions/checkout@v2
     - name: Test Action using default filename
       id: pom-details
-      uses: actions/quarkus-pom-action
+      uses: jthambly/quarkus-pom-action
     - name: Test Action using providing filename
       id: pom-details-filename
       uses: jthambly/quarkus-pom-action
       with:
-        filename: 'pom.xml'
+        filename: pom.xml
