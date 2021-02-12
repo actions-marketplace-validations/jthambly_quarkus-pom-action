@@ -19,5 +19,5 @@ PROJECT_NAME=$(xmlstarlet sel -N x="$MAVEN_NS" -t -v '/x:project/x:artifactId' -
 echo "::set-output name=PROJECT_NAME::$PROJECT_NAME"
 
 # Retrieve current extensions
-QUARKUS_EXTENSIONS=$(xmlstarlet sel -N x="$MAVEN_NS" -t -m '/x:project/x:dependencies/x:dependency' -v 'x:groupId' -o ':' -v 'x:artifactId' -n "$POM_FILE")
+QUARKUS_EXTENSIONS=$(xmlstarlet sel -N x="$MAVEN_NS" -t -m '/x:project/x:dependencies/x:dependency' -v 'x:groupId' -o ':' -v 'x:artifactId' -n "$POM_FILE" | tr '\n' ',' | sed s'/,$//')
 echo "::set-output name=QUARKUS_EXTENSIONS::$QUARKUS_EXTENSIONS"

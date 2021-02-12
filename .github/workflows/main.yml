@@ -26,3 +26,10 @@ jobs:
       uses: ./ # Local action
       with:
         filename: pom.xml
+
+    - name: Check values
+      run: |
+        echo ${{ steps.pom-details-filename.outputs.current_version }}
+        echo ${{ steps.pom-details-filename.outputs.project_group }}
+        echo ${{ steps.pom-details-filename.outputs.project_name }}
+        echo ${{ steps.pom-details-filename.outputs.quarkus_extensions }}
