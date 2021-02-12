@@ -22,3 +22,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.filename }}
+branding:
+  icon: code
+  color: blue
