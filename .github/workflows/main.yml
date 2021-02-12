@@ -12,7 +12,7 @@ jobs:
 
     - name: Test Action using default filename
       id: pom-details
-      uses: jthambly/quarkus-pom-action@v1
+      uses: ./ # Local action
 
     - name: Check values
       run: |
@@ -23,6 +23,6 @@ jobs:
 
     - name: Test Action using provided filename
       id: pom-details-filename
-      uses: jthambly/quarkus-pom-action@v1
+      uses: ./ # Local action
       with:
         filename: pom.xml
