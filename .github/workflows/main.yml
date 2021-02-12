@@ -13,6 +13,6 @@ jobs:
       uses: actions/quarkus-pom-action
     - name: Test Action using providing filename
       id: pom-details-filename
-      uses: actions/quarkus-pom-action
+      uses: jthambly/quarkus-pom-action
       with:
         filename: 'pom.xml'

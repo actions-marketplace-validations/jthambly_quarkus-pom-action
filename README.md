@@ -29,7 +29,7 @@ The Quarkus dependencies contained in the POM file.
 ## Example usage
 
 ```
-uses: actions/quarkus-pom-action@v1
+uses: jthambly/quarkus-pom-action@v1
 with:
   filename: 'pom.xml'
  
