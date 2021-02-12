@@ -16,10 +16,11 @@ jobs:
 
     - name: Check values
       run: |
-        echo ${{ steps.pom-details.outputs.current_version }}
-        echo ${{ steps.pom-details.outputs.project_group }}
-        echo ${{ steps.pom-details.outputs.project_name }}
-        echo ${{ steps.pom-details.outputs.quarkus_extensions }}
+        
+        echo ${{ steps.pom-details.outputs.current_version == '1.11.3.Final' }}
+        echo ${{ steps.pom-details.outputs.project_group == 'org.acme' }}
+        echo ${{ steps.pom-details.outputs.project_name == 'code-with-quarkus' }}
+        echo ${{ steps.pom-details.outputs.quarkus_extensions == 'io.quarkus:quarkus-arc,io.quarkus:quarkus-junit5' }}
 
     - name: Test Action using provided filename
       id: pom-details-filename
