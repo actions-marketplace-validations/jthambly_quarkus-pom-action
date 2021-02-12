@@ -29,8 +29,20 @@ The Quarkus dependencies contained in the POM file.
 ## Example usage
 
 ```
-uses: jthambly/quarkus-pom-action@v1
-with:
-  filename: pom.xml
+...
+
+ - uses: jthambly/quarkus-pom-action@v1
+   id: test-run
+   with:
+     filename: pom.xml
+
+- name: Print values
+  run: |
+    echo ${{ steps.test-run.outputs.current_version }}
+    echo ${{ steps.test-run.outputs.project_group }}
+    echo ${{ steps.test-run.outputs.project_name }}
+    echo ${{ steps.test-run.outputs.quarkus_extensions }}
+
+...
  
 ```
