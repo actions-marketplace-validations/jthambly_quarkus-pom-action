@@ -9,7 +9,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v2
     - name: Test Action using default filename
-      id: pom-details`
+      id: pom-details
       uses: actions/quarkus-pom-action
     - name: Test Action using providing filename
       id: pom-details-filename
