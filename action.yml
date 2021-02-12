@@ -1,0 +1,24 @@
+# GitHub Action
+
+name: 'quarkus-pom-action'
+author: 'Jason Hambly www.linkedin.com/in/jason-hambly'
+description: 'Extracts important information from a Maven POM file used by Quarkus'
+inputs:
+  filename:
+    description: 'The path of the POM.xml file'
+    required: false
+    default: 'pom.xml'
+outputs:
+  current_version:
+    description: 'The current Quarkus version'
+  project_group:
+    description: 'The current project group'
+  project_name:
+    description: 'The current project name'
+  quarkus_extensions:
+    description: 'The current Quarkus extensions'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filename }}
