@@ -36,7 +36,7 @@ jobs:
 
     - name: Test values for failure
       run: |
-        ! [[ ${{ steps.pom-details.outputs.current_version == '1.11.3.Final' }} && \
+        ! [[ ${{ steps.pom-details.outputs.current_version == '1.11.2.Final' }} && \ # Modified
         ${{ steps.pom-details.outputs.project_group == 'org.acme' }} && \
         ${{ steps.pom-details.outputs.project_name == 'code-with-quarkus' }} && \
         ${{ steps.pom-details.outputs.quarkus_extensions == 'io.quarkus:quarkus-arc,io.quarkus:quarkus-junit5' }} ]]
